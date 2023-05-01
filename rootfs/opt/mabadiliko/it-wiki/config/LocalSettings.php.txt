@@ -5,7 +5,6 @@ wfLoadExtension( 'ReplaceText' );
 wfLoadExtension( 'InputBox' );
 wfLoadExtension( 'ParserFunctions' );
 
-
 wfLoadExtension( 'Elastica' );
 wfLoadExtension( 'MsUpload' );
 wfLoadExtension( 'intersection' );
@@ -17,3 +16,6 @@ wfLoadExtension( 'HeaderTabs' );
 wfLoadExtension( 'Lockdown' );
 wfLoadExtension( 'LabeledSectionTransclusion' );
 wfLoadExtension( 'PageForms' );
+
+wfLoadExtension( 'SemanticMediaWiki' );
+wfLoadExtension( 'SemanticResultFormats' );

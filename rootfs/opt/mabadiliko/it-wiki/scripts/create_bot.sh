@@ -14,6 +14,7 @@ set -o nounset
 . /opt/bitnami/scripts/liblog.sh
 
 # Create a init bot user
-BOT_PWD=$(cat /dev/urandom | tr -dc '[:alnum:]' | fold -w ${1:-32} | head -n 1)
 cd /opt/bitnami/mediawiki
-php maintenance/createBotPassword.php ${MEDIAWIKI_USERNAME^} $BOT_PWD --appid initbot --grants basic,createeditmovepage,delete,uploadeditmovefile,editsiteconfig
+BOT_PWD=$(cat /dev/urandom | tr -dc '[:digit:]' | fold -w ${1:-32} | head -n 1)
+BOT_INFO=$(php maintenance/createBotPassword.php ${MEDIAWIKI_USERNAME^} $BOT_PWD --appid initbot --grants basic,createeditmovepage,delete,uploadeditmovefile,editsiteconfig)
+info $BOT_INFO
